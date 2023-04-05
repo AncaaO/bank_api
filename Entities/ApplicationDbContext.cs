@@ -13,6 +13,6 @@ namespace Tokero_wallet.Entities
         public DbSet<Deposit> Deposits { get; set; }
         public DbSet<TradeOrder> TradeOrders { get; set; }
         public DbSet<TradeOrderType> TradeOrderTypes { get; set; }
-        public DbSet<Withdrawal> Withdraws { get; set; }
+        public DbSet<Withdrawal> Withdrawals { get; set; }
     }
 }
