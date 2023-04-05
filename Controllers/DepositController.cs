@@ -5,7 +5,7 @@ using Tokero_wallet.Repository;
 namespace Tokero_wallet.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class DepositController : ControllerBase
     {
         private readonly ILogger<DepositController> _logger;
