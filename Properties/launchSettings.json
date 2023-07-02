@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Tokero_wallet": {
+    "Bank": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

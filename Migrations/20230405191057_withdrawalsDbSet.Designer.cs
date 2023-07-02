@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Tokero_wallet.Entities;
+using Bank.Entities;
 
 #nullable disable
 
-namespace Tokero_wallet.Migrations
+namespace Bank.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230405191057_withdrawalsDbSet")]
@@ -24,7 +24,7 @@ namespace Tokero_wallet.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Tokero_wallet.Entities.Deposit", b =>
+            modelBuilder.Entity("Bank.Entities.Deposit", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace Tokero_wallet.Migrations
                     b.ToTable("Deposits");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.Operation", b =>
+            modelBuilder.Entity("Bank.Entities.Operation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -71,7 +71,7 @@ namespace Tokero_wallet.Migrations
                     b.ToTable("Operations");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.OperationType", b =>
+            modelBuilder.Entity("Bank.Entities.OperationType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -88,7 +88,7 @@ namespace Tokero_wallet.Migrations
                     b.ToTable("OperationTypes");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.TradeOrder", b =>
+            modelBuilder.Entity("Bank.Entities.TradeOrder", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -115,7 +115,7 @@ namespace Tokero_wallet.Migrations
                     b.ToTable("TradeOrders");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.TradeOrderType", b =>
+            modelBuilder.Entity("Bank.Entities.TradeOrderType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -132,7 +132,7 @@ namespace Tokero_wallet.Migrations
                     b.ToTable("TradeOrderTypes");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.Withdrawal", b =>
+            modelBuilder.Entity("Bank.Entities.Withdrawal", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -161,20 +161,20 @@ namespace Tokero_wallet.Migrations
                     b.ToTable("Withdrawals");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.Deposit", b =>
+            modelBuilder.Entity("Bank.Entities.Deposit", b =>
                 {
-                    b.HasOne("Tokero_wallet.Entities.Operation", "Operation")
+                    b.HasOne("Bank.Entities.Operation", "Operation")
                         .WithOne("Deposit")
-                        .HasForeignKey("Tokero_wallet.Entities.Deposit", "OperationId")
+                        .HasForeignKey("Bank.Entities.Deposit", "OperationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Operation");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.Operation", b =>
+            modelBuilder.Entity("Bank.Entities.Operation", b =>
                 {
-                    b.HasOne("Tokero_wallet.Entities.OperationType", "OperationType")
+                    b.HasOne("Bank.Entities.OperationType", "OperationType")
                         .WithMany("Operations")
                         .HasForeignKey("OperationTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -183,15 +183,15 @@ namespace Tokero_wallet.Migrations
                     b.Navigation("OperationType");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.TradeOrder", b =>
+            modelBuilder.Entity("Bank.Entities.TradeOrder", b =>
                 {
-                    b.HasOne("Tokero_wallet.Entities.Operation", "Operation")
+                    b.HasOne("Bank.Entities.Operation", "Operation")
                         .WithOne("TradeOrder")
-                        .HasForeignKey("Tokero_wallet.Entities.TradeOrder", "OperationId")
+                        .HasForeignKey("Bank.Entities.TradeOrder", "OperationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Tokero_wallet.Entities.TradeOrderType", "TradeOrderType")
+                    b.HasOne("Bank.Entities.TradeOrderType", "TradeOrderType")
                         .WithMany("TradeOrders")
                         .HasForeignKey("TradeOrderTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -202,18 +202,18 @@ namespace Tokero_wallet.Migrations
                     b.Navigation("TradeOrderType");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.Withdrawal", b =>
+            modelBuilder.Entity("Bank.Entities.Withdrawal", b =>
                 {
-                    b.HasOne("Tokero_wallet.Entities.Operation", "Operation")
+                    b.HasOne("Bank.Entities.Operation", "Operation")
                         .WithOne("Withdrawal")
-                        .HasForeignKey("Tokero_wallet.Entities.Withdrawal", "OperationId")
+                        .HasForeignKey("Bank.Entities.Withdrawal", "OperationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Operation");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.Operation", b =>
+            modelBuilder.Entity("Bank.Entities.Operation", b =>
                 {
                     b.Navigation("Deposit")
                         .IsRequired();
@@ -225,12 +225,12 @@ namespace Tokero_wallet.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.OperationType", b =>
+            modelBuilder.Entity("Bank.Entities.OperationType", b =>
                 {
                     b.Navigation("Operations");
                 });
 
-            modelBuilder.Entity("Tokero_wallet.Entities.TradeOrderType", b =>
+            modelBuilder.Entity("Bank.Entities.TradeOrderType", b =>
                 {
                     b.Navigation("TradeOrders");
                 });

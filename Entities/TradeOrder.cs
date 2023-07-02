@@ -1,4 +1,4 @@
-﻿namespace Tokero_wallet.Entities
+﻿namespace Bank.Entities
 {
     public class TradeOrder
     {

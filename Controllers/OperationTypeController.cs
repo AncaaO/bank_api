@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Tokero_wallet.Entities;
-using Tokero_wallet.Repository;
+using Bank.Entities;
+using Bank.Repository;
 
-namespace Tokero_wallet.Controllers
+namespace Bank.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]

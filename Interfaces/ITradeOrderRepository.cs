@@ -1,6 +1,6 @@
-﻿using Tokero_wallet.Entities;
+﻿using Bank.Entities;
 
-namespace Tokero_wallet.Interfaces
+namespace Bank.Interfaces
 {
     public interface ITradeOrderRepository
     {

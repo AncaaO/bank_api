@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Tokero_wallet.Entities
+namespace Bank.Entities
 {
     public class ApplicationDbContext : DbContext
     {

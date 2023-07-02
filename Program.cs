@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
-using Tokero_wallet.Entities;
-using Tokero_wallet.Repository;
+using Bank.Entities;
+using Bank.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 

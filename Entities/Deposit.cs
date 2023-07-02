@@ -1,6 +1,6 @@
 ﻿using Azure;
 
-namespace Tokero_wallet.Entities
+namespace Bank.Entities
 {
     public class Deposit
     {

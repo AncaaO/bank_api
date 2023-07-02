@@ -1,7 +1,7 @@
-﻿using Tokero_wallet.Entities;
-using Tokero_wallet.Interfaces;
+﻿using Bank.Entities;
+using Bank.Interfaces;
 
-namespace Tokero_wallet.Repository
+namespace Bank.Repository
 {
     public class OperationTypeRepository : IOperationTypeRepository
     {

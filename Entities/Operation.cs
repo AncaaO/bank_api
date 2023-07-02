@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace Tokero_wallet.Entities
+namespace Bank.Entities
 {
     public class Operation
     {

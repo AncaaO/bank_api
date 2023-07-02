@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Tokero_wallet.Migrations
+namespace Bank.Migrations
 {
     /// <inheritdoc />
     public partial class withdrawalsDbSet : Migration
