@@ -15,6 +15,7 @@ builder.Services.AddScoped<DepositRepository>();
 builder.Services.AddScoped<TradeOrderRepository>();
 builder.Services.AddScoped<WithdrawalRepository>();
 builder.Services.AddScoped<OperationTypeRepository>();
+builder.Services.AddScoped<CoinRepository>();
 
 builder.Services.AddControllers().AddJsonOptions(x =>
                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);

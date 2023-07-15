@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "abc5da14-81a2-477e-9aed-ff8ae4d28ee2",
+		"name": "Bank Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28549346"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7172/Coin/GetAll",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7172",
+					"path": [
+						"Coin",
+						"GetAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"{{$randomProduct}}\",\r\n  \"description\": \"{{$randomPhrase}}\",\r\n  \"deleted\": false,\r\n  \"when\": \"{{$isoTimestamp}}\",\r\n  \"updated\": \"{{$isoTimestamp}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7172/Coin/Create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7172",
+					"path": [
+						"Coin",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"test\",\r\n  \"description\": \"test\",\r\n  \"deleted\": true,\r\n  \"when\": \"2023-07-15T12:38:48.805Z\",\r\n  \"updated\": \"2023-07-15T12:38:48.805Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7172/Coin/Edit",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7172",
+					"path": [
+						"Coin",
+						"Edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7172/Coin/Delete?coinId=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7172",
+					"path": [
+						"Coin",
+						"Delete"
+					],
+					"query": [
+						{
+							"key": "coinId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

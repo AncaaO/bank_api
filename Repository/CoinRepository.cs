@@ -19,17 +19,31 @@ namespace Bank.Repository
             _context.Coins.Add(coin);
             _context.SaveChanges();
         }
+        public List<Coin> GetAllCoins()
+        {
+            List<Coin> coins = _context.Coins.ToList();
+            return coins;
+        }
+        public Coin GetCoinById(int coinId)
+        {
+            var coin = _context.Coins.Where(c => c.Id == coinId).FirstOrDefault();
+            return coin;
+        }
+        public Coin GetCoinByName(string coinName)
+        {
+            Coin coin = _context.Coins.Where(c => c.Name == coinName).FirstOrDefault();
+            return coin;
+        }
         public void DeleteCoin(int coinId)
         {
             var coin = _context.Coins.Where(c => c.Id == coinId).FirstOrDefault();
             coin.Deleted = true;
             _context.SaveChanges();
         }
-
         public Coin EditCoin(Coin coin)
         {
             var thiscoin = _context.Coins.Where(c => c.Id == coin.Id).FirstOrDefault();
-            
+
             thiscoin.Description = coin.Description;
             thiscoin.Name = coin.Name;
             thiscoin.Updated = DateTime.Now;
@@ -38,25 +52,6 @@ namespace Bank.Repository
             _context.SaveChanges();
             return thiscoin;
         }
-
-        public List<Coin> GetAllCoins()
-        {
-            List<Coin> coins = _context.Coins.ToList();
-            return coins;
-        }
-
-        public Coin GetCoinById(int coinId)
-        {
-            var coin = _context.Coins.Where(c => c.Id == coinId).FirstOrDefault();
-            return coin;
-        }
-
-        public Coin GetCoinByName(string coinName)
-        {
-            Coin coin = _context.Coins.Where(c => c.Name == coinName).FirstOrDefault();
-            return coin;
-        }
     }
-
 }
 
