@@ -21,7 +21,7 @@ namespace Bank.Repository
         }
         public List<Coin> GetAllCoins()
         {
-            List<Coin> coins = _context.Coins.ToList();
+            List<Coin> coins = _context.Coins.Where(c => !c.Deleted).ToList();
             return coins;
         }
         public List<Coin> GetAllExistingCoins()
